@@ -171,28 +171,60 @@ export default function TopicModal({ open, onClose, topic, questions = [] }) {
 
         {/* Mostrar el puntaje */}
         {score !== null && (
-          <>
-            <Typography variant="body1" sx={{ mt: 2 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+              mt: 4,
+              p: 2,
+              borderRadius: 2,
+              backgroundColor: "#f1f8e9", // Fondo claro
+              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", // Sombra suave
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{ mt: 1, fontWeight: "bold", color: "#4CAF50" }}
+            >
               Tu puntaje: {score.toFixed(2)}%
             </Typography>
-            <Typography variant="body2" sx={{ mt: 1 }}>
+            <Typography
+              variant="body1"
+              sx={{
+                mt: 2,
+                mb: 3,
+                fontSize: "1.1rem",
+                color: "#388e3c",
+                fontWeight: "medium",
+              }}
+            >
               {getMotivationalMessage()}
             </Typography>
             <Button
               variant="contained"
-              color="secondary"
+              size="large"
               href="https://congresofisme.untrm.edu.pe/"
               sx={{
-                mt: 2,
                 backgroundColor: "#28a745",
+                color: "#ffffff",
+                fontSize: "1.1rem",
+                fontWeight: "bold",
+                paddingX: 3,
+                paddingY: 1.5,
+                borderRadius: 8,
+                boxShadow: "0px 4px 12px rgba(40, 167, 69, 0.4)", // Sombra verde
                 "&:hover": {
                   backgroundColor: "#218838",
+                  boxShadow: "0px 6px 16px rgba(40, 167, 69, 0.6)",
                 },
               }}
             >
               Inscríbete al Congreso
             </Button>
-          </>
+          </Box>
         )}
       </Box>
     </Modal>
